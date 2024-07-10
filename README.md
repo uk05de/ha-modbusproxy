@@ -19,11 +19,8 @@ The addon is only tested and compatible with hassio supervisor.
 - Configure Your Clients to connect to your HA IP and choosen listenport.
 
 ### Configuration Tab
-<img width="382" alt="image" src="https://user-images.githubusercontent.com/103323/163730831-3b757097-c47f-4420-aebe-9fd357b12db4.png">
-
-### Output after Start
-<img width="935" alt="image" src="https://user-images.githubusercontent.com/103323/163732834-0ccc2bcd-94eb-4506-bdd1-5466fb82e76a.png">
-
+<img width="774" alt="config" src="https://github.com/TCzerny/ha-modbusproxy/assets/13466867/2f512819-d9fd-4a90-a0ed-2a3eafcd0c4c">
+<img width="778" alt="network" src="https://github.com/TCzerny/ha-modbusproxy/assets/13466867/37fb14b1-3910-401e-84e9-a9d934a8a3d4">
 
 
 ## Mentions
