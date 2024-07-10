@@ -5,18 +5,10 @@ devices:
       connection_time: __CONNECTIONTIME__ # delay after connection (s) (optional, default: 0)
     listen:
       bind: 0:__LISTENPORT__ # listening address (mandatory)
-  - modbus:
-      url: __HOST2__:__PORT2__ # device url (mandatory)
-      timeout: __TIMEOUT2__ # communication timeout (s) (optional, default: 10)
-      connection_time: __CONNECTIONTIME2__ # delay after connection (s) (optional, default: 0)
-    listen:
-      bind: 0:__LISTENPORT2__ # listening address (mandatory)
-  - modbus:
-      url: __HOST3__:__PORT3__ # device url (mandatory)
-      timeout: __TIMEOUT3__ # communication timeout (s) (optional, default: 10)
-      connection_time: __CONNECTIONTIME3__ # delay after connection (s) (optional, default: 0)
-    listen:
-      bind: 0:__LISTENPORT3__ # listening address (mandatory)
+
+# CONFIGURATIONPART_HOST2
+# CONFIGURATIONPART_HOST3
+  
 logging:
   version: 1
   formatters:
