@@ -29,6 +29,9 @@ options:
   connection_time3: 0.1
   timeout3: 10
   loglevel: "INFO"
+  filter: ""
+  filter2: ""
+  filter3: ""
 schema:
   upstreamhost: str
   upstreamport: int
@@ -48,6 +51,9 @@ schema:
   connection_time3: float
   timeout3: int
   loglevel: list(INFO|DEBUG|ERROR)
+  filter: str
+  filter2: str
+  filter3: str
 ports:
   502/tcp: 502
   503/tcp: 503
