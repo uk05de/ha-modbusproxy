@@ -19,7 +19,7 @@ The addon is only tested and compatible with hassio supervisor.
 - Configure Your Clients to connect to your HA IP and choosen listenport.
 
 ### Configuration Tab
-<img width="519" alt="config" src="https://github.com/TCzerny/ha-modbusproxy/assets/13466867/83fcd817-ba37-4196-8cb2-9bf1fe131833">
+<img width="519" alt="config" src="https://github.com/uk05de/ha-modbusproxy/assets/13466867/83fcd817-ba37-4196-8cb2-9bf1fe131833">
 
 ## Mentions
 This addon is a fork from the original addon of Akulatraxas
