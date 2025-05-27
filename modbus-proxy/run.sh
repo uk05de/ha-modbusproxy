@@ -42,7 +42,23 @@ echo "      timeout: ${CONFIG_TIMEOUT} # communication timeout (s) (optional, de
 echo "      connection_time: ${CONFIG_CONNECTIONTIME} # delay after connection (s) (optional, default: 0)" >> modbus.txt
 echo "    listen:" >> modbus.txt
 echo "      bind: 0:${CONFIG_LISTENPORT} # listening address (mandatory)" >> modbus.txt
-
+# Create Filters
+if [ "$(bashio::config 'filter')" ]; then
+    echo "    filter:" >> modbus.txt
+    echo "      allow:" >> modbus.txt
+    for filter in $(bashio::config 'filter|keys'); do
+        SLAVE=$(bashio::config "filter[${filter}].slave")
+        FUNCTION=$(bashio::config "filter[${filter}].function")
+        START=$(bashio::config "filter[${filter}].address_start")
+        END=$(bashio::config "filter[${filter}].address_end")
+        {
+            echo "        - slave: ${SLAVE}"
+            echo "          function: ${FUNCTION}"
+            echo "          address_start: ${START}"
+            echo "          address_end: ${END}"
+        } >> modbus.txt
+    done
+fi
 
 if [ $CONFIG_ENABLEHOST2 = true ]
 then
@@ -52,6 +68,7 @@ then
     echo "Listen 2: $CONFIG_LISTENPORT2"
     echo "Timeout 2: $CONFIG_TIMEOUT2"
     echo "Connection Time 2: $CONFIG_CONNECTIONTIME2"
+    echo "Filter 2: $CONFIG_FILTER2"
 
     echo "  - modbus:" >> ./modbus.txt
     echo "      url: ${CONFIG_HOST2}:${CONFIG_PORT2} # device url (mandatory)" >> modbus.txt
@@ -59,7 +76,23 @@ then
     echo "      connection_time: ${CONFIG_CONNECTIONTIME2} # delay after connection (s) (optional, default: 0)" >> modbus.txt
     echo "    listen:" >> modbus.txt
     echo "      bind: 0:${CONFIG_LISTENPORT2} # listening address (mandatory)" >> modbus.txt
-
+    # Create Filters2
+    if [ "$(bashio::config 'filter2')" ]; then
+        echo "    filter:" >> modbus.txt
+        echo "      allow:" >> modbus.txt
+        for filter in $(bashio::config 'filter2|keys'); do
+            SLAVE=$(bashio::config "filter2[${filter}].slave")
+            FUNCTION=$(bashio::config "filter2[${filter}].function")
+            START=$(bashio::config "filter2[${filter}].address_start")
+            END=$(bashio::config "filter2[${filter}].address_end")
+            {
+                echo "        - slave: ${SLAVE}"
+                echo "          function: ${FUNCTION}"
+                echo "          address_start: ${START}"
+                echo "          address_end: ${END}"
+            } >> modbus.txt
+        done
+    fi
 fi
 
 if [ $CONFIG_ENABLEHOST3 = true ] 
@@ -70,6 +103,7 @@ then
     echo "Listen 3: $CONFIG_LISTENPORT3"
     echo "Timeout 3: $CONFIG_TIMEOUT3"
     echo "Connection Time 3: $CONFIG_CONNECTIONTIME3"
+    echo "Filter 3: $CONFIG_FILTER3"
 
     echo "  - modbus:" >> ./modbus.txt
     echo "      url: ${CONFIG_HOST3}:${CONFIG_PORT3} # device url (mandatory)" >> modbus.txt
@@ -77,7 +111,23 @@ then
     echo "      connection_time: ${CONFIG_CONNECTIONTIME3} # delay after connection (s) (optional, default: 0)" >> modbus.txt
     echo "    listen:" >> modbus.txt
     echo "      bind: 0:${CONFIG_LISTENPORT3} # listening address (mandatory)" >> modbus.txt
-
+    # Create Filters3
+    if [ "$(bashio::config 'filter3')" ]; then
+        echo "    filter:" >> modbus.txt
+        echo "      allow:" >> modbus.txt
+        for filter in $(bashio::config 'filter3|keys'); do
+            SLAVE=$(bashio::config "filter3[${filter}].slave")
+            FUNCTION=$(bashio::config "filter3[${filter}].function")
+            START=$(bashio::config "filter3[${filter}].address_start")
+            END=$(bashio::config "filter3[${filter}].address_end")
+            {
+                echo "        - slave: ${SLAVE}"
+                echo "          function: ${FUNCTION}"
+                echo "          address_start: ${START}"
+                echo "          address_end: ${END}"
+            } >> modbus.txt
+        done
+    fi
 fi
 
 

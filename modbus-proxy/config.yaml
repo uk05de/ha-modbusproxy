@@ -16,22 +16,22 @@ options:
   listenport: 502
   connection_time: 0.1
   timeout: 10
+  filter: []
   enablehost2: true
   upstreamhost2: "192.168.178.101"
   upstreamport2: 502
   listenport2: 503
   connection_time2: 0.1
   timeout2: 10
+  filter2: []
   enablehost3: true
   upstreamhost3: "192.168.178.102"
   upstreamport3: 502
   listenport3: 504
   connection_time3: 0.1
   timeout3: 10
+  filter3: []
   loglevel: "INFO"
-  filter: ""
-  filter2: ""
-  filter3: ""
 schema:
   upstreamhost: str
   upstreamport: int
@@ -51,9 +51,21 @@ schema:
   connection_time3: float
   timeout3: int
   loglevel: list(INFO|DEBUG|ERROR)
-  filter: str
-  filter2: str
-  filter3: str
+  filter:
+    - slave: int
+      function: int
+      address_start: int
+      address_end: int
+  filter2:
+    - slave: int
+      function: int
+      address_start: int
+      address_end: int
+  filter3:
+    - slave: int
+      function: int
+      address_start: int
+      address_end: int
 ports:
   502/tcp: 502
   503/tcp: 503
