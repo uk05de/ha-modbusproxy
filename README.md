@@ -3,6 +3,7 @@
 Usally one modbus server only allows a single connection and denies any more clients. 
 With this Addon you can create a proxy which can handle mutiple client connections at the same time. 
 Currently you can configure the Addon to establish a connection to three different Modbus Servers and provide the information to multiple clients through the respective listenport.
+Additionaly you can configure filters, so supress non standard modbus pushes from servers.
 
 The addon is only tested and compatible with hassio supervisor. 
 
@@ -14,19 +15,14 @@ The addon is only tested and compatible with hassio supervisor.
 ## Configuration
 - Stop all Clients that currently connect to the modbus servers. The Server might need some time before another client (our proxy) can connect.
   - In case you are using solaredge-modbus in homeassistant you can change the server address here: /config/.storage/core.config_entries. 
-- Before starting go to the configuration page and set the ip of your modbus server. 
+- Before starting go to the configuration page and set the ip of your modbus server and define filters if needed. 
 - Start The Add-On (This may take a while on the first start as it builds the cointainer locally)
 - Configure Your Clients to connect to your HA IP and choosen listenport.
 
-### Configuration Tab
-<img width="519" alt="config" src="https://github.com/uk05de/ha-modbusproxy/assets/13466867/83fcd817-ba37-4196-8cb2-9bf1fe131833">
-
 ## Mentions
-This addon is a fork from the original addon of Akulatraxas
-- https://github.com/Akulatraxas/ha-modbusproxy
-
-Which was forked from
+This addon is a fork from TCzerny which was forked from the original addon of Akulatraxas
 - https://github.com/TCzerny/ha-modbusproxy
+- https://github.com/Akulatraxas/ha-modbusproxy
 
 This addon uses the modbus-proxy of tiagocoutinho:
 - https://github.com/tiagocoutinho/modbus-proxy
