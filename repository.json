@@ -1,5 +1,5 @@
 {
   "name": "Modbus Proxy Repository",
-  "url": "https://github.com/TCzerny/ha-modbusproxy",
-  "maintainer": "TCzerny <support@tczerny.de>"
+  "url": "https://github.com/uk05de/ha-modbusproxy",
+  "maintainer": "Robert Arndt <robert.arndt@me.com>"
 }
