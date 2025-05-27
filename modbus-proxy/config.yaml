@@ -7,7 +7,7 @@ arch:
   - amd64
   - armhf
   - armv7
-url: "https://github.com/TCzerny/ha-modbusproxy"
+url: "https://github.com/uk05de/ha-modbusproxy"
 startup: services
 init: false
 options:
@@ -38,34 +38,34 @@ schema:
   listenport: int
   connection_time: float
   timeout: int
+  filter:
+    - slave: int
+      function: int
+      address_start: int
+      address_end: int
   enablehost2: bool
   upstreamhost2: str
   upstreamport2: int
   listenport2: int
   connection_time2: float
   timeout2: int
+  filter2:
+    - slave: int
+      function: int
+      address_start: int
+      address_end: int
   enablehost3: bool
   upstreamhost3: str
   upstreamport3: int
   listenport3: int
   connection_time3: float
   timeout3: int
-  loglevel: list(INFO|DEBUG|ERROR)
-  filter:
-    - slave: int
-      function: int
-      address_start: int
-      address_end: int
-  filter2:
-    - slave: int
-      function: int
-      address_start: int
-      address_end: int
   filter3:
     - slave: int
       function: int
       address_start: int
       address_end: int
+  loglevel: list(INFO|DEBUG|ERROR)
 ports:
   502/tcp: 502
   503/tcp: 503
